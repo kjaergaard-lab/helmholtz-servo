@@ -1,0 +1,71 @@
+* Purpose
+  This device is intended to be used to regulate the current through a
+  Helmholtz coil, used for generating a magnetic field in our cold
+  atom collider.
+
+  The majority of the system is built from chopper-stabilized
+  amplifiers, for their very low input bias, and DC performance. This
+  limits the bandwidth of the filter, and can cause aliasing. Hence
+  this controller is not designed for "fast" systems.
+
+  This schematic is for documentation purposes only.
+
+* Signals
+Only HH_TTL is isolated, and with the optional exception of the SENSE
+input, all other grounds/shields are shared.
+** HH_TTL
+   The Helmholtz TTL signal switches on or off the output voltage. In
+   our case, the control voltage is being used to drive MOSFETs, so
+   these are turned off. 
+   
+   The Integrator is also reset with this signal, preventing accumulation
+   while the servo is not active from causing transient behaviour when
+   the servo is enabled.
+
+   The polarity of this signal is set by populating certain resistors
+   (R9-12, R5, R6) as per the schematic.
+   
+   This signal is opto-isolated, so may operate at a relative potential
+   to the rest of this circuit. The signal is assumed to be 5V, and
+   will cause about 10 mA current draw.
+
+** V_REF
+   This is the output of a 5 V voltage reference, for use with an
+   external DAC.
+** V_DAC
+   This is assumed to be the output of the DAC, and is used as the
+   set-point for the PID controller
+** SENSE
+   This is the Process Variable, as a current signal. The current
+   is passed through a precision 1 ohm resistor, and the resulting
+   voltage is compared to V_DAC to generate the error signal.
+
+   The current return is optionally connected to ground by bridging R1.
+** OUT
+   This is the Control Variable, which is the result of the PID
+   operation on the error.
+
+* Configuration
+  HH_TTL has selectable polarity by selecting which resistors to
+  populate on the analog switches the signal activates. (R9-12, R5,
+  R6).
+
+  The SENSE shield can optionally be grounded by putting a 0 ohm
+  resistor (or solder bridge) in R1.
+
+  The total polarity of the system is selected using JP1 and
+  JP2. These should both be loaded with jumpers between pins 1 and 2
+  for the default, non-inverting operation. They should be swapped to
+  pins 2 and 3 to invert the output. *NB:* Either remove both jumpers
+  first, or make sure device is unpowered with no inputs before
+  changing the polarity. This is to ensure that two inputs are not
+  shorted together while configuring. Note that during operation, the
+  jumpers should be connecting the same pin numbers, but will be
+  positioned at physically opposite ends of the jumpers.
+
+* Power
+  This board is designed to be powered off a dual supply. If a
+  negative supply is not available, the supply pin may be grounded,
+  and partial operation will be available.
+
+  
