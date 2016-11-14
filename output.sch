@@ -1,5 +1,4 @@
 EESchema Schematic File Version 2
-LIBS:CurrentServo-rescue
 LIBS:CurrentServo
 LIBS:power
 LIBS:device
@@ -86,7 +85,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 3
 Title "Helmholtz Current Servo"
-Date ""
+Date "2016-11-14"
 Rev ""
 Comp "Kjaergaard Lab"
 Comment1 ""

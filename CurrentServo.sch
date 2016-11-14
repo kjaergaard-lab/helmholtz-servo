@@ -1,5 +1,4 @@
 EESchema Schematic File Version 2
-LIBS:CurrentServo-rescue
 LIBS:CurrentServo
 LIBS:power
 LIBS:device
@@ -86,7 +85,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 3
 Title "Helmholtz Current Servo"
-Date ""
+Date "2016-11-14"
 Rev ""
 Comp "Kjaergaard Lab"
 Comment1 ""
@@ -586,7 +585,7 @@ U 1 1 5817C922
 P 9150 1550
 F 0 "U6" H 8950 1750 50  0000 L CNN
 F 1 "TLP116A" H 9150 1750 50  0000 L CNN
-F 2 "Opto-Devices:Optocoupler_6pin_wide_Stile-I" H 8950 1350 50  0001 L CIN
+F 2 "local:TLP116A" H 8950 1350 50  0001 L CIN
 F 3 "" H 9150 1550 50  0000 L CNN
 	1    9150 1550
 	1    0    0    -1  
