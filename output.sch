@@ -85,7 +85,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 3
 Title "Helmholtz Current Servo"
-Date "2016-11-14"
+Date "2016-12-15"
 Rev ""
 Comp "Kjaergaard Lab"
 Comment1 ""
@@ -274,13 +274,13 @@ NoConn ~ 4500 3800
 $Comp
 L POT RV6
 U 1 1 5820ECF5
-P 3450 4050
-F 0 "RV6" H 3450 3970 50  0000 C CNN
-F 1 "100K" H 3450 4050 50  0000 C CNN
-F 2 "Potentiometers:Potentiometer_Bourns_3296W_3-8Zoll_Inline_ScrewUp" H 3450 4050 50  0001 C CNN
-F 3 "" H 3450 4050 50  0000 C CNN
-	1    3450 4050
-	-1   0    0    -1  
+P 3400 3900
+F 0 "RV6" H 3400 3820 50  0000 C CNN
+F 1 "100K" H 3400 3900 50  0000 C CNN
+F 2 "Potentiometers:Potentiometer_Bourns_3296W_3-8Zoll_Inline_ScrewUp" H 3400 3900 50  0001 C CNN
+F 3 "" H 3400 3900 50  0000 C CNN
+	1    3400 3900
+	0    1    1    0   
 $EndComp
 $Comp
 L R R8
@@ -767,15 +767,13 @@ Wire Wire Line
 	3700 3550 3700 4450
 Connection ~ 4000 3550
 Wire Wire Line
-	3600 4050 3600 4150
+	3600 3900 3600 4150
 Wire Wire Line
 	3600 4150 4100 4150
 Wire Wire Line
-	4950 4050 4950 3450
+	4950 3450 4950 4050
 Wire Wire Line
-	4950 3450 3450 3450
-Wire Wire Line
-	3450 3450 3450 3900
+	3400 3450 4950 3450
 Wire Wire Line
 	6250 3150 5700 3150
 Text Notes 7800 2300 0    60   ~ 0
@@ -798,7 +796,7 @@ Wire Wire Line
 	1400 4150 1400 2900
 Connection ~ 1400 3250
 Wire Wire Line
-	2300 4050 3300 4050
+	2300 4050 3400 4050
 Wire Wire Line
 	1050 3750 1400 3750
 Connection ~ 1400 3750
@@ -1027,4 +1025,8 @@ F 3 "" H 7050 3150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 6850 3150
+Wire Wire Line
+	3550 3900 3600 3900
+Wire Wire Line
+	3400 3450 3400 3750
 $EndSCHEMATC

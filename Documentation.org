@@ -65,7 +65,24 @@ input, all other grounds/shields are shared.
 
 * Power
   This board is designed to be powered off a dual supply. If a
-  negative supply is not available, the supply pin may be grounded,
-  and partial operation will be available.
+  negative supply is not available, the negative supply pin may be grounded,
+  and positive operation will be available.
 
   
+* Erata
+** TC7650
+   These amplifiers are only capable of a 18 V supply, but the
+   specified dual 15 V supplies give supply of 30 V. The circuit can
+   be used with +/- 8 V supplies instead of +/- 15 V with these
+   amplifiers.
+
+   These amplifiers have been replaced with the LTC1150, which can
+   handle these supply ranges, but has a much lower bandwidth. These
+   devices were chosen as they are available in a DIP package, and
+   could be placed on the existing board, when removing all the
+   switching capacitors (C16, C15, C27, C26, C22, C21, C32, C31, C36, C35,
+   C40, C41).
+
+** RV6 - Output Gain
+   This resistor was wired with pins 1 and 2 reversed in the
+   2016-11-14 board. These must be swapped for correct operation.
